@@ -11,7 +11,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnuFajlMegnyit">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Megnyit"/>
+                <Property name="text" type="java.lang.String" value="Megnyit..."/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuFajlMent">
@@ -22,10 +22,13 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuFajlMentActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <MenuItem class="javax.swing.JMenuItem" name="mnuFajlMentesMaskent">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Mentes m&#xe1;sk&#xe9;nt..."/>
+                <Property name="text" type="java.lang.String" value="Ment&#xe9;s m&#xe1;sk&#xe9;nt..."/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuFajlMentesMaskentActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator1">
             </MenuItem>
@@ -40,6 +43,31 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="M&#x171;veletek"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JRadioButtonMenuItem" name="mnuMuveletOsszeadas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#xd6;sszead&#xe1;s"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JRadioButtonMenuItem" name="mnuMuveletKivonas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Kivon&#xe1;s"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JRadioButtonMenuItem" name="mnuMuveletSzorzas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Szorz&#xe1;s"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JRadioButtonMenuItem" name="mnuMuveletOsztas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Oszt&#xe1;s"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuMuveletOsztasActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>
@@ -71,8 +99,8 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
+                  <Component id="jPanel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="pnlGyakorlas" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -90,12 +118,12 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="btnUj" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="btnMegoldas" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="pnlGyakorlas" min="-2" max="-2" attributes="0"/>
+                  <Component id="pnlGyakorlas" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
@@ -105,79 +133,13 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="pnlGyakorlas">
-      <Properties>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Gyakorl&#xe1;s"/>
-          </Border>
-        </Property>
-      </Properties>
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="lblValasz" alignment="1" min="-2" pref="89" max="-2" attributes="0"/>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="lblFeladat" min="-2" pref="76" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtEredmeny" min="-2" pref="38" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnEllenorzes" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblFeladat" alignment="0" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtEredmeny" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnEllenorzes" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="lblValasz" min="-2" pref="22" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblFeladat">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="4"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtEredmeny">
-        </Component>
-        <Component class="javax.swing.JButton" name="btnEllenorzes">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Ellen&#x151;rz&#xe9;s"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEllenorzesActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblValasz">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="visszajelz&#xe9;s"/>
-          </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
     <Component class="javax.swing.JButton" name="btnUj">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xda;j feladat"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUjActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnMegoldas">
       <Properties>
@@ -199,16 +161,16 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lblEredmeny" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblOsszeadKerdes" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblKivonasKerdes" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblOsztasKerdes" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblSzorzasKerdes" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblOsszeadKerdes" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblKivonasKerdes" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblOsztasKerdes" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblSzorzasKerdes" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="lblOsszKerdes" alignment="1" min="-2" pref="130" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="31" max="32767" attributes="0"/>
@@ -235,7 +197,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Component id="lblOsszeadKerdes" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lblKivonasKerdes" min="-2" max="-2" attributes="0"/>
@@ -244,7 +206,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lblSzorzasKerdes" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Component id="lblOsszeadProba" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lblKivonasProba" min="-2" max="-2" attributes="0"/>
@@ -325,6 +287,73 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" value="Szorz&#xe1;s: 0"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="pnlGyakorlas">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Gyakorl&#xe1;s"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="lblValasz" alignment="1" min="-2" pref="89" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="lblFeladat" min="-2" pref="76" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txtEredmeny" min="-2" pref="38" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnEllenorzes" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtEredmeny" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnEllenorzes" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblFeladat" alignment="3" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblValasz" min="-2" pref="22" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lblFeladat">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtEredmeny">
+        </Component>
+        <Component class="javax.swing.JButton" name="btnEllenorzes">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ellen&#x151;rz&#xe9;s"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEllenorzesActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblValasz">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="visszajelz&#xe9;s"/>
           </Properties>
         </Component>
       </SubComponents>
