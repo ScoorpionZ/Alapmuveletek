@@ -334,7 +334,7 @@ public class Muveletek extends javax.swing.JFrame {
         }
         else{
             try { 
-                Files.write(Paths.get(mentettFajl),"Statisztika:".getBytes());
+                Files.write(Paths.get(mentettFajl),tartalomOsszeallitasa().getBytes());
             } catch (IOException ex) {
                 Logger.getLogger(Muveletek.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -386,7 +386,7 @@ public class Muveletek extends javax.swing.JFrame {
             lblEredmeny.setText("<html>Elérés: "+f.getPath()+"<br>Fájl neve:"+f.getName()+"."+kit[0]+"</html>");                
             try { 
                 if (mentes) {
-                    Files.write(path,"Statisztika:".getBytes());
+                    Files.write(path,tartalomOsszeallitasa().getBytes());
                 }          
             } catch (IOException ex) {                    
 		Logger.getLogger(Muveletek.class.getName()).log(Level.SEVERE, null, ex); 
@@ -401,9 +401,20 @@ public class Muveletek extends javax.swing.JFrame {
         /*fájl neve és kiválasztása*/
         JFileChooser fc = new JFileChooser(new File("."));         
         fc.setDialogTitle("Megnyitás");
+        
+        FileNameExtensionFilter imgFilter = new FileNameExtensionFilter("PNG és GIF fájlok", "png", "gif");
+        fc.addChoosableFileFilter(imgFilter);
+        FileNameExtensionFilter txtFilter = new FileNameExtensionFilter("Csak szöveg (.txt)", "txt");
+        fc.addChoosableFileFilter(txtFilter);
+        FileNameExtensionFilter sgFilter = new FileNameExtensionFilter("saját (.va)", "*va");
+        fc.addChoosableFileFilter(sgFilter);
+
+        fc.setFileFilter(txtFilter);
+        
         int valasztottGombErteke = fc.showOpenDialog(this);
         if (valasztottGombErteke == JFileChooser.APPROVE_OPTION) {              
             File f=fc.getSelectedFile(); 
+            String fn = f.getPath();
             lblEredmeny.setText("<html>Elérés: "+f.getPath()+"<br>Fájl neve:"+f.getName()+"</html>");
         }
         else{
@@ -481,4 +492,9 @@ public class Muveletek extends javax.swing.JFrame {
     private javax.swing.JPanel pnlGyakorlas;
     private javax.swing.JTextField txtEredmeny;
     // End of variables declaration//GEN-END:variables
+
+    private String tartalomOsszeallitasa() {
+        String statisztika ="Alapműveletek gyakoroltatása statisztika";
+        return statisztika;
+    }
 }
