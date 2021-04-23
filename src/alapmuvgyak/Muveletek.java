@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -495,6 +496,19 @@ public class Muveletek extends javax.swing.JFrame {
 
     private String tartalomOsszeallitasa() {
         String statisztika ="Alapműveletek gyakoroltatása statisztika";
+        JLabel[] lblTomb = new JLabel[]{lblOsszKerdes,lblOsszeadKerdes,lblOsszeadProba,lblOsztasKerdes,lblOsztasProba,lblKivonasKerdes,lblKivonasProba,lblSzorzasKerdes,lblSzorzasProba};
+//        for (JLabel lbl:lblTomb) {
+//            statisztika +=lbl.getText()+"\n";
+//        }
+//        statisztika += lblOsszKerdes;
+//        statisztika += lblOsszeadProba;
+        final int he = 3;
+        final int oszz_KERDES_Hossz = lblTomb[0].getText().length();
+        final int oszz_Proba_Hossz = lblTomb[1].getText().length();
+        for (int i = 0; i < lblTomb.length; i++) {
+            String format ="%"+(oszz_KERDES_Hossz+he)+"s%"+(oszz_Proba_Hossz+he)+"s\n";
+            statisztika += String.format(format,lblTomb[i].getText(),lblTomb[i+1].getText());
+        }
         return statisztika;
     }
 }
