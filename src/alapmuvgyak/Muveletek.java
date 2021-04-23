@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -463,6 +464,17 @@ public class Muveletek extends javax.swing.JFrame {
             File f=fc.getSelectedFile(); 
             String fn = f.getPath();
             lblEredmeny.setText("<html>Elérés: "+f.getPath()+"<br>Fájl neve:"+f.getName()+"</html>");
+            Path path= Paths.get(fn);
+            try {
+                List<String> stringlist = Files.readAllLines(path);
+                String egysor = stringlist.get(1);
+                String[] adatok = egysor.split(":");
+                //"".trim();
+               //byte [] bajtTomb = Files.readAllBytes(path);
+                int temp = 67;
+            } catch (IOException ex) {
+                Logger.getLogger(Muveletek.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         else{
             JOptionPane.showMessageDialog(this,"A megnyitás megszakítva","A mentés sikertelen!",JOptionPane.INFORMATION_MESSAGE);
