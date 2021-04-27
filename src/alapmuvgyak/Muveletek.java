@@ -1,5 +1,6 @@
 package alapmuvgyak;
 
+import com.sun.javafx.scene.control.skin.LabeledText;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -19,8 +20,12 @@ public class Muveletek extends javax.swing.JFrame {
     /**
      * Creates new form Muveletek
      */
+    JLabel[] lblTomb;
+    String[] lblTextTomb;
     public Muveletek() {
         initComponents();
+        lblTomb = new JLabel[]{lblOsszKerdes,lblOsszeadKerdes,lblOsszeadProba,lblOsztasKerdes,lblOsztasProba,lblKivonasKerdes,lblKivonasProba,lblSzorzasKerdes,lblSzorzasProba};
+        lblTextTomb = new String[]{"Össz kérdések száma: ","Össz Probálkozások száma: ","Összeadás: ","Összeadás: ","Kivonás: ","Kivonás: ","Osztás: ","Osztás: ","Szorzás: ","Szorzás: "};
     }
     String mentettFajl ="";
     int osszKerdesSzama= 0;
@@ -29,7 +34,6 @@ public class Muveletek extends javax.swing.JFrame {
     int osztasProbakSzama= 0;
     int szorzasKerdesSzama= 0;
     int szorzasProbakSzama= 0;
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -467,8 +471,57 @@ public class Muveletek extends javax.swing.JFrame {
             Path path= Paths.get(fn);
             try {
                 List<String> stringlist = Files.readAllLines(path);
-                String egysor = stringlist.get(1);
-                String[] adatok = egysor.split(":");
+                int labelIndex=0;
+                for (int i = 1; i < stringlist.size(); i++) {
+                    String egysor = stringlist.get(1);
+                    String[] adatok = egysor.split(": ");
+                    JLabel lbl=lblTomb[labelIndex+1];
+                    lbl.setText(lblTextTomb[labelIndex+1]+adatok[1]);
+                    adatok = adatok[1].split(" ");
+                    lbl=lblTomb[labelIndex];
+                    lbl.setText(lblTextTomb[labelIndex+1]+adatok[0]);
+                    labelIndex +=2;
+                }
+//                String egysor = stringlist.get(1);
+//                String[] adatok = egysor.split(": ");
+//
+//                String probaSzama = adatok[2];
+//                lbllblOsszProba.setText("Össz Probálkozások száma: "+probaSzama);
+//                adatok = adatok[1].split(" ");
+//                String kerSzama = adatok[0];
+//                lblOsszKerdes.setText("Össz kérdések száma: "+kerSzama);
+//                
+//                egysor = stringlist.get(2);
+//                adatok = egysor.split(": ");
+//                probaSzama = adatok[2];
+//                lbllblOsszProba.setText("Összead: "+probaSzama);
+//                adatok = adatok[1].split(" ");
+//                kerSzama = adatok[0];
+//                lblOsszKerdes.setText("Összead: "+kerSzama);
+//                
+//                egysor = stringlist.get(2);
+//                adatok = egysor.split(": ");
+//                probaSzama = adatok[2];
+//                lbllblOsszProba.setText("Kivonás: "+probaSzama);
+//                adatok = adatok[1].split(" ");
+//                kerSzama = adatok[0];
+//                lblOsszKerdes.setText("Kivonás: "+kerSzama);
+//                
+//                egysor = stringlist.get(3);
+//                adatok = egysor.split(": ");
+//                probaSzama = adatok[2];
+//                lbllblOsszProba.setText("Osztás: "+probaSzama);
+//                adatok = adatok[1].split(" ");
+//                kerSzama = adatok[0];
+//                lblOsszKerdes.setText("Osztás: "+kerSzama);
+//                
+//                egysor = stringlist.get(4);
+//                adatok = egysor.split(": ");
+//                probaSzama = adatok[2];
+//                lbllblOsszProba.setText("Szorzás: "+probaSzama);
+//                adatok = adatok[1].split(" ");
+//                kerSzama = adatok[0];
+//                lblOsszKerdes.setText("Szorzás: "+kerSzama);
                 //"".trim();
                //byte [] bajtTomb = Files.readAllBytes(path);
                 int temp = 67;
@@ -561,7 +614,7 @@ public class Muveletek extends javax.swing.JFrame {
 
     private String tartalomOsszeallitasa() {
         String statisztika ="Alapműveletek gyakoroltatása statisztika";
-        JLabel[] lblTomb = new JLabel[]{lblOsszKerdes,lblOsszeadKerdes,lblOsszeadProba,lblOsztasKerdes,lblOsztasProba,lblKivonasKerdes,lblKivonasProba,lblSzorzasKerdes,lblSzorzasProba};
+       
 //        for (JLabel lbl:lblTomb) {
 //            statisztika +=lbl.getText()+"\n";
 //        }
