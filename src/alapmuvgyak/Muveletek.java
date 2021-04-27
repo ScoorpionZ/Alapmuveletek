@@ -471,9 +471,35 @@ public class Muveletek extends javax.swing.JFrame {
             Path path= Paths.get(fn);
             try {
                 List<String> stringlist = Files.readAllLines(path);
+                
+//                int labelIndex=0;
+//                for (int i = 1; i < stringlist.size(); i++) {
+//                    String egysor = stringlist.get(i);
+//                    String[] adatok = egysor.split("\\D+");
+//                    JLabel lbl=lblTomb[labelIndex];
+//                    lbl.setText(lblTextTomb[labelIndex]+adatok[1]);
+//                    lbl=lblTomb[labelIndex +1];
+//                    lbl.setText(lblTextTomb[labelIndex+1]+adatok[2]);
+//                    labelIndex +=2;
+//                }
+                
+//                int labelIndex=0;
+//                for (int i = 1; i < stringlist.size(); i++) {
+//                    String egysor = stringlist.get(i);
+//                    //String[] adatok = egysor.split("\\D+");
+//                    String[] adatok = egysor.split(": ");
+//                    egysor = egysor.replaceAll("\\D+", ";");
+//                    adatok = egysor.split(";");
+//                    JLabel lbl=lblTomb[labelIndex];
+//                    lbl.setText(lblTextTomb[labelIndex]+adatok[1]);
+//                    lbl=lblTomb[labelIndex +1];
+//                    lbl.setText(lblTextTomb[labelIndex+1]+adatok[2]);
+//                    labelIndex +=2;
+//                }
+                
                 int labelIndex=0;
                 for (int i = 1; i < stringlist.size(); i++) {
-                    String egysor = stringlist.get(1);
+                    String egysor = stringlist.get(i);
                     String[] adatok = egysor.split(": ");
                     JLabel lbl=lblTomb[labelIndex+1];
                     lbl.setText(lblTextTomb[labelIndex+1]+adatok[1]);
